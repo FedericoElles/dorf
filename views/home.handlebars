@@ -1,0 +1,5 @@
+
+{{#each data.elements}}
+  <!-- Base Element {{title}} -->
+  {{> (lookup . 'type')}}
+{{/each}}
