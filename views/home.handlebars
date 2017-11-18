@@ -1,4 +1,25 @@
 
+<div class="u-text-center u-space-vert-1 u-uppercase">
+  
+{{index.configs.presents_text}}
+</div>
+
+<h1 class="u-font-special u-space-vert-4 u-text-center c-title">
+  Dorf sucht Dich
+</h1>
+
+<h2 class="u-text-center u-strong u-space-vert-2">
+
+  {{>blockText data.elements.[0]}}
+  <br>
+  
+</h2>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<hr>
+
 {{#each data.elements}}
   <!-- Base Element {{title}} -->
   {{> (lookup . 'type')}}
