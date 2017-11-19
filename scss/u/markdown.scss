@@ -6,4 +6,9 @@
       color: $color-grey;
     }
   }
+  
+  h3 {
+    @include inuit-font-size($inuit-font-size-h3, $important: false);
+    margin-bottom: $spacing-unit*2;
+  }
 }

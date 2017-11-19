@@ -1,0 +1,14 @@
+.c-table {
+  
+}
+
+.c-table__right {
+  @media (min-width:#{$breakpoint}px){
+      border-left: 1px solid $color-grey; 
+  }
+
+}
+
+.c-table__left {
+  
+}
