@@ -12,3 +12,13 @@
     border-color: $color-black;
   }
 }
+
+.c-link--box {
+  text-decoration: none;
+
+
+  &:hover .c-link__underline {
+    text-decoration: underline;
+  }
+}
+

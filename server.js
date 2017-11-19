@@ -140,7 +140,8 @@ app.get("/:id", function (req, res) {
    var index;
    apimock.index(req.apimock, WEBSITEID).then(function(data){ 
      index = data;
-     return apimock.slug(req.apimock, req.params.id);
+     var id = req.params.id.replace('.html','');
+     return apimock.slug(req.apimock, id);
    }).then(function(data){     
      res.render('article', getContext(req, data, index));
      

@@ -115,7 +115,9 @@ function elementify(items){
         stageElement.title = element.fields.title;
         stageElement.description = element.fields.description;
         stageElement.url = element.fields.url;
-        stageElement.image = element.fields.image.fields;
+        if (element.fields.image){
+          stageElement.image = element.fields.image.fields;
+        }
         break;
       case 'blockImage':
         stageElement.title = element.fields.title;

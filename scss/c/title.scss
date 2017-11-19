@@ -1,3 +1,13 @@
 .c-title {
-  font-size: 40px;
+  font-size: 50px;
+  @media (min-width:#{$breakpoint}px){
+    font-size: 70px;
+  }
+}
+
+.c-title__sub {
+  color: $color-grey;
+  position: relative;
+  top: -20px;
+  letter-spacing: 7px;
 }
