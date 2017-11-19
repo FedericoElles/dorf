@@ -1,12 +1,15 @@
 
 <div class="u-text-center u-space-vert-1 u-uppercase">
   
-{{index.configs.presents_text}}
+{{{index.configs.presents_text.html}}}
 </div>
 
-<h1 class="u-font-special u-space-vert-4 u-text-center c-title">
+<h1 class="u-font-special u-space-top-4 u-line-height-1 u-text-center c-title">
   Dorf sucht Dich
 </h1>
+<div class="u-space-bottom-4 u-h4 u-text-center">
+  ( 🏘️🔎🙋 )
+</div>
 
 <h2 class="u-text-center u-strong u-space-vert-2">
 
@@ -15,12 +18,13 @@
   
 </h2>
 
-
-
-<br><br><br><br><br><br><br><br><br><br><br>
-<hr>
-
-{{#each data.elements}}
-  <!-- Base Element {{title}} -->
-  {{> (lookup . 'type')}}
-{{/each}}
+<div class="o-layout">
+  <div class="o-layout__item u-1/2">
+    {{>blockText data.elements.[1]}}
+    {{>blockHtml data.elements.[2]}}
+  </div>
+  <div class="o-layout__item u-1/2">
+    {{>blockText data.elements.[3]}}
+    {{>blockHtml data.elements.[4]}}
+  </div>
+</div>

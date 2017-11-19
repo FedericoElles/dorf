@@ -147,7 +147,10 @@ apimock.index = function(config, id){
       data.configs = {};
       if (stage.fields.configs){ 
         stage.fields.configs.forEach(function(config){
-          data.configs[config.fields.key] = config.fields.value || '';
+          data.configs[config.fields.key] = {
+            value: config.fields.value || '',
+            html: marked(config.fields.value) || ''
+          };
         });
       }
     

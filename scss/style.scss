@@ -36,7 +36,9 @@ $base-spacing-unit: $spacing-unit;
 @import "c/footer";
 @import "c/link";
 @import "c/title";
+@import "c/hr";
 
 @import "u/text";
 @import "u/space";
 @import "u/grid";
+@import "u/markdown";

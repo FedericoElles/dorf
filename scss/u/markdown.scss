@@ -1,0 +1,9 @@
+.u-markdown{
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+      color: $color-grey;
+    }
+  }
+}
