@@ -111,6 +111,12 @@ function elementify(items){
       case 'blockText':
         stageElement.textHTML = marked(element.fields.text);
         break;
+      case 'blockLink':
+        stageElement.title = element.fields.title;
+        stageElement.description = element.fields.description;
+        stageElement.url = element.fields.url;
+        stageElement.image = element.fields.image.fields;
+        break;
       case 'blockImage':
         stageElement.title = element.fields.title;
         stageElement.description = element.fields.description;

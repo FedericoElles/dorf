@@ -19,12 +19,16 @@
 </h2>
 
 <div class="o-layout c-table">
-  <div class="o-layout__item u-1/2 c-table__left">
-    {{>blockText data.elements.[1]}}
-    {{>blockHtml data.elements.[2]}}
+  <div class="o-layout__item u-1/2@lg c-table__col c-table__col--left">
+    <div>
+      {{>blockText data.elements.[1]}}
+      {{>blockHtml data.elements.[2]}}
+    </div>
   </div>
-  <div class="o-layout__item u-1/2 c-table__right">
-    {{>blockText data.elements.[3]}}
-    {{>blockHtml data.elements.[4]}}
+  <div class="o-layout__item u-1/2@lg c-table__col c-table__col--right">
+    <div>
+      {{>blockText data.elements.[3]}}
+      {{>blockHtml data.elements.[4]}}
+    </div>
   </div>
 </div>

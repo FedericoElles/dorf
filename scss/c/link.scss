@@ -1,3 +1,14 @@
 .c-link {
   text-decoration: underline;
 }
+
+.c-link--primary {
+  text-decoration: none;
+  border: 1px solid $color-grey;
+  padding: $spacing-unit;
+  
+  &:hover {
+    color: $color-grey;
+    border-color: $color-black;
+  }
+}

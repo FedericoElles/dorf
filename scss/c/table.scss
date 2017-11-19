@@ -1,14 +1,22 @@
 .c-table {
+  margin-left:0;
+}
+
+.c-table__col {
   
 }
 
-.c-table__right {
+.c-table__col--right {
   @media (min-width:#{$breakpoint}px){
-      border-left: 1px solid $color-grey; 
+    border-left: 1px solid $color-grey;
+    padding-right: $spacing-unit*2;
   }
 
 }
 
-.c-table__left {
-  
+.c-table__col--left {
+  @media (min-width:#{$breakpoint}px){
+    padding-right: $spacing-unit*2;
+    padding-left: $spacing-unit*2;
+  }
 }
