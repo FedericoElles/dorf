@@ -97,6 +97,19 @@ apimock.articles = function(config){
 }
 
 
+function getUrl(element, type){
+  var r = '';
+  if (type === 'page'){
+    if (element.fields.slug){
+      r = '/' + element.fields.slug;
+    }
+    if (element.fields.folder && element.fields.folder.fields && element.fields.folder.fields.slug){
+      r = '/' + element.fields.folder.fields.slug + r;
+    }
+  }
+  return r;
+}
+
 
 function elementify(items){
   
@@ -108,6 +121,7 @@ function elementify(items){
     };
 
     switch (stageElement.type){
+      //page elements
       case 'blockText':
         stageElement.textHTML = marked(element.fields.text);
         break;
@@ -126,6 +140,13 @@ function elementify(items){
         break;
       case 'blockHtml':
         stageElement.html = element.fields.html;
+        break;
+      //container elements
+      case 'page':
+        stageElement.title = element.fields.title;
+        stageElement.slug = element.fields.slug;
+        stageElement.url = getUrl(element, stageElement.type);
+        stageElement.folder = element.fields.folder;
         break;
       default:
         stageElement.error = 'Unknown Block';
@@ -256,7 +277,7 @@ apimock.slug = function(config, slug){
             data.slug = stage.fields.slug;
             data.type = type;
             if (stage.fields.elements){
-              //data.elements = elementify(stage.fields.elements);
+              data.elements = elementify(stage.fields.elements);
             }
             deferred.resolve(data);
           } else {

@@ -136,12 +136,25 @@ app.get("/article/:id", function (req, res) {
 /**
  * Display article with webseite info
  */
-app.get("/:id", function (req, res) {
+app.get("*", function (req, res) {
    var index;
    apimock.index(req.apimock, WEBSITEID).then(function(data){ 
      index = data;
-     var id = req.params.id.replace('.html','');
-     return apimock.slug(req.apimock, id);
+     
+     //id equals the last path element, without html suffix
+     var id = '';
+     
+     var ids = req.path.replace('.html','').split('/');
+       
+     while (id === '' && ids.length){
+       id = ids.pop();
+     }
+          
+     if (id){
+       return apimock.slug(req.apimock, id);
+     } else {
+       res.render('home', getContext(req, index, index));
+     }
    }).then(function(data){     
      res.render('article', getContext(req, data, index));
      
